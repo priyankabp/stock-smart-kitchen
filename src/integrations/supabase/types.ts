@@ -14,7 +14,159 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      ml_models: {
+        Row: {
+          accuracy: number | null
+          azure_endpoint: string
+          created_at: string
+          id: string
+          is_active: boolean | null
+          model_type: string
+          name: string
+          training_date: string | null
+          version: string
+        }
+        Insert: {
+          accuracy?: number | null
+          azure_endpoint: string
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          model_type: string
+          name: string
+          training_date?: string | null
+          version: string
+        }
+        Update: {
+          accuracy?: number | null
+          azure_endpoint?: string
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          model_type?: string
+          name?: string
+          training_date?: string | null
+          version?: string
+        }
+        Relationships: []
+      }
+      ml_predictions: {
+        Row: {
+          accuracy_score: number | null
+          actual_demand: number | null
+          confidence_score: number
+          created_at: string
+          id: string
+          location: string
+          model_name: string
+          predicted_demand: number
+          prediction_date: string
+          product_category: string
+        }
+        Insert: {
+          accuracy_score?: number | null
+          actual_demand?: number | null
+          confidence_score: number
+          created_at?: string
+          id?: string
+          location: string
+          model_name: string
+          predicted_demand: number
+          prediction_date: string
+          product_category: string
+        }
+        Update: {
+          accuracy_score?: number | null
+          actual_demand?: number | null
+          confidence_score?: number
+          created_at?: string
+          id?: string
+          location?: string
+          model_name?: string
+          predicted_demand?: number
+          prediction_date?: string
+          product_category?: string
+        }
+        Relationships: []
+      }
+      sales_data: {
+        Row: {
+          created_at: string
+          humidity: number | null
+          id: string
+          location: string
+          product_category: string
+          quantity: number
+          revenue: number
+          temperature: number | null
+          timestamp: string
+          visitor_count: number | null
+          weather_condition: string | null
+        }
+        Insert: {
+          created_at?: string
+          humidity?: number | null
+          id?: string
+          location: string
+          product_category: string
+          quantity: number
+          revenue: number
+          temperature?: number | null
+          timestamp: string
+          visitor_count?: number | null
+          weather_condition?: string | null
+        }
+        Update: {
+          created_at?: string
+          humidity?: number | null
+          id?: string
+          location?: string
+          product_category?: string
+          quantity?: number
+          revenue?: number
+          temperature?: number | null
+          timestamp?: string
+          visitor_count?: number | null
+          weather_condition?: string | null
+        }
+        Relationships: []
+      }
+      weather_data: {
+        Row: {
+          condition: string
+          created_at: string
+          humidity: number
+          id: string
+          location: string
+          precipitation: number | null
+          temperature: number
+          timestamp: string
+          wind_speed: number | null
+        }
+        Insert: {
+          condition: string
+          created_at?: string
+          humidity: number
+          id?: string
+          location: string
+          precipitation?: number | null
+          temperature: number
+          timestamp: string
+          wind_speed?: number | null
+        }
+        Update: {
+          condition?: string
+          created_at?: string
+          humidity?: number
+          id?: string
+          location?: string
+          precipitation?: number | null
+          temperature?: number
+          timestamp?: string
+          wind_speed?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
